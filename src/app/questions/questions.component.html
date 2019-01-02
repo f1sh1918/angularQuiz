@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="container" style="margin: 5px;">
+    <form #questionForm="ngForm" (ngSubmit)="onSubmit(Question.value, Option1.value,Option2.value,Option3.value,Option4.value,Answer.value, questionForm)">
+      <div class="form-group">
+        <label >Question</label>
+        <input type="textarea" class="form-control"  name="Question" placeholder="Question" #Question ngModel required>
+      </div>
+      <div class="form-group">
+        <label >Option 1</label>
+        <input type="text" class="form-control"  name="Option1" placeholder="Option1"  #Option1 ngModel required>
+         </div>
+         <div class="form-group">
+            <label >Option 2</label>
+            <input type="text" class="form-control"  name="Option2" placeholder="Option2"  #Option2 ngModel required>
+             </div>
+             <div class="form-group">
+                <label >Option 3</label>
+                <input type="text" class="form-control"  name="Option3" placeholder="Option3"  #Option3 ngModel required>
+                 </div>
+                 <div class="form-group">
+                    <label >Option 4</label>
+                    <input type="text" class="form-control"  name="Option4" placeholder="Option4"  #Option4 ngModel required>
+                     </div>
+                     <div class="form-group">
+                        <label >Answer</label>
+                        <input type="number" class="form-control"  name="Answer" placeholder="Answer"  #Answer ngModel required min="1" max="4">
+                         </div>
+      <button type="submit" class="btn-success" [disabled]="!questionForm.valid">Submit</button>
+    </form>
+    </div>

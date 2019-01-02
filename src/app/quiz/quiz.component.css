@@ -1,0 +1,13 @@
+.footer .right {
+  float:right;
+  padding-right: 2%;
+}
+.header .right {
+  float:right;
+  padding-right: 2%;
+}
+.footer .left{
+  float:left;
+  padding-left: 2%;
+}
+

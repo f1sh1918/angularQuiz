@@ -1,0 +1,35 @@
+<div class="container" style="margin: 5px;">
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(Name.value, Email.value)">
+  <div class="form-group">
+    <label >Name</label>
+    <input type="text" class="form-control"  name="Name" placeholder="Name" #Name ngModel required>
+  </div>
+  <div class="form-group">
+    <label >Email address</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" name="Email" placeholder="E-Mail"  #Email ngModel required [pattern]="emailPattern">
+     </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Submit</button>
+</form>
+</div>
+
+
+<table class="table" >
+    <thead>
+      <tr>
+
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of quizService.participants">
+        <td>{{user.Name}}</td>
+        <td>{{user.Email}}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+<!-- <div *ngFor="let user of quizService.participants">{{user.Name}}</div> !-->
